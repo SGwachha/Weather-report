@@ -1,0 +1,102 @@
+.header {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+}
+
+.searchbar {
+    justify-content: center;
+    margin: 0;
+}
+
+.button {
+    background-color: green;
+    text-align: center;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.weatherimage {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-self: center;
+    margin: 50px;
+    gap: 20px;
+}
+
+.leftimage {
+    text-align: start;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border: 1px solid rgb(229, 227, 227);
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 2px 2px 5px #dcdbdb;
+}
+
+.rightimage {
+    text-align: start;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border: 1px solid rgb(229, 227, 227);
+    border-radius: 5px;
+    padding: 30px;
+    box-shadow: 2px 2px 5px #dcdbdb;
+}
+
+.leftcover {
+    background-image: url("./images/background.webp");
+    color: #fff;
+}
+
+.leftimage-container {
+    justify-content: space-between;
+    align-items: space-between;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    padding-left: 50px;
+    padding-right: 50px;
+    color: #fff;
+}
+
+.leftimage-container-left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+}
+
+.leftimage-row {
+    display: flex;
+    flex-direction: row;
+    padding-left: 30px;
+    padding-right: 30px;
+    justify-content: space-between;
+    align-items: space-between;
+}
+
+.table{
+    background: #faedca;
+    border-bottom: 2px solid #ec972f;
+    caption-side: bottom;
+    border-collapse: collapse;
+}
+
+tr{
+    border-color: inherit;
+    border-style: solid;
+    border-width: 0;
+    display: table-row;
+    vertical-align: inherit;
+}
+
+td{
+    display: table-cell;
+    height: 50px;
+}
