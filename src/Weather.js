@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './Weather.css';
 import Weatherform from './Weatherform';
 import { useDispatch, useSelect } from '@wordpress/data';
@@ -10,20 +10,25 @@ const Weather = () => {
 
     const { setLocation } = useDispatch(store);
 
-    const handleButtonClick = () =>{
+    const handleSubmit = (e) => {
+        e.preventDefault();
         setLocation(newLocation)
     }
 
     return (
-        <div>
-            <div className='header'>
-                <div className='searchbar'>
-                    <input value={newLocation} onChange={(e) => setNewLoaction(e.target.value)} />
-                    <button className='button' onClick={handleButtonClick}>Search</button>
+        <>
+            <form onSubmit={handleSubmit}>
+                <div className='header'>
+                    <div className='searchbar'>
+                        <input value={newLocation} onChange={(e) => setNewLoaction(e.target.value)} />
+                        <button className='button'>Search</button>
+                    </div>
                 </div>
-            </div>
-            {location && <Weatherform />}
-        </div>
+                {location ? <Weatherform /> :
+                    <h1>Please search the location you want to know the weather data</h1>
+                }
+            </form>
+        </>
     );
 };
 
