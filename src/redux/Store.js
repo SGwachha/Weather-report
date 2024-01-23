@@ -1,36 +1,37 @@
 import { createReduxStore, register } from "@wordpress/data";
 
 const DEFAULT_STATE = {
-    location: 'hi',
-};
-
-const actions = {
-    setLocation(location) {
-        return {
-            type: "Set_Location",
-            location,
-        };
-    },
+    location: '',
 };
 
 const store = createReduxStore('Weather-report', {
     reducer(state = DEFAULT_STATE, action) {
         switch (action.type) {
-            case 'Set_Location':
+            case 'SET_LOCATION':
                 return {
                     ...state,
-                    location: action.location,
+                    location: action.payload,
                 };
             default:
                 return state;
         }
     },
-    actions,
-    selectors: {
-        getLocation(state) {
-            return state.location;
+
+    actions: {
+        setLocation(location) {
+            return {
+                type: "SET_LOCATION",
+                payload: location,
+            };
         },
     },
+    
+  selectors: {
+        getLocation(state) {
+        const { location } = state;
+        return location;
+        },
+    }
 });
 
 register(store);
